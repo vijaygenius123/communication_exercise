@@ -13,6 +13,9 @@
         integrity="sha256-ol2N5Xr80jdDqxK0lte3orKGb9Ja3sOnpAUV7TTADmg=" crossorigin="anonymous" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.6.0/css/theme/white.min.css"
         integrity="sha256-7dwMOkQRlAVq/G79bV034hezbpLtwWpwTS3g4lp47yo=" crossorigin="anonymous" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/headjs/1.0.3/head.min.js"
+        integrity="sha256-+09kLhwACKXFPDvqo4xMMvi4+uXFsRZ2uYGbeN1U8sI=" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="./styles.css" />
     <title>Communication Exercises</title>
 </head>
 
@@ -29,6 +32,16 @@
                 </section>
                 <section>
                     means of sending or receiving information, such as telephone lines or computers
+                </section>
+                <section class="diagram-slide">
+                    <span class="diagram-data" style="display:none;">
+                        sequenceDiagram
+                        A->>B: Hi
+                        B->>A: Hello
+                    </span>
+                    <!-- Diagram will be displayed in this DIV -->
+                    <div class="diagram-display">
+                    </div>
                 </section>
                 <section>
                     Something we take for granted since we are always doing it
@@ -234,15 +247,11 @@ console.log(uniqueNames);
 
     <script>
 
-        Reveal.initialize();
-        var config = {
-            startOnLoad: true,
-            flowchart: {
-                useMaxWidth: false,
-                htmlLabels: true
-            }
-        };
-        mermaid.initialize(config);
+        Reveal.initialize({
+            dependencies: [
+                { src: 'plugins/mermaid.js' }
+            ]
+        });
     </script>
 </body>
 
